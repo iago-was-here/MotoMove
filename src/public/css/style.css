@@ -1,0 +1,11 @@
+:root {
+    --black-color: #000000;
+    --dark-grey-color: #292929;
+    --main-red-color: #FF0000;
+    --light-grey-color: #7A7A7A;
+    --white-color: #FFFFFF;
+}
+
+body {
+    background-color: #000000;
+}
