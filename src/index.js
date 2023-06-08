@@ -1,18 +1,21 @@
-import routes from './routes/routes.js';
-import express  from 'express';
-import exphbs from 'express-handlebars';
+const express = require('express');
+const exphbs = require('express-handlebars');
+const routes = require('./routes/routes.js');
 
 const app = express();
 const port = 3000;
 
-app.use(express.static('public'));
+app.engine('handlebars', exphbs.engine())
+  .set('view engine', 'handlebars')
+  .set('views', __dirname + '/views')
+  .use('/assets', express.static(__dirname + '/assets'))
+  .use('/bootstrap/dist/css', express.static('/node_modules/bootstrap/dist/css'))
+  .use('/', routes);
 
-app.engine('handlebars', exphbs.engine());
-app.set('view engine', 'handlebars');
-
-app.use(express.urlencoded({ extended: false }));
-app.use("/",routes);
+app.get('/', () => {
+  console.log(__dirname);
+});
 
 app.listen(port, () => {
-    console.log(`Servidor iniciado em http://localhost:${port}`);
+  console.log(`Servidor iniciado em http://localhost:${port}`);
 });

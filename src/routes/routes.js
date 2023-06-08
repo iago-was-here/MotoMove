@@ -1,8 +1,5 @@
-import express  from 'express';
+const express = require('express');
 const routes = express.Router();
 
-routes.get("/",function(req, res){
-    console.log('Eita');
-})
 
-export default routes;
+module.exports =  routes;
