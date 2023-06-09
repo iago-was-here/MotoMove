@@ -9,7 +9,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link menu-list" href="">Login</a>
+                <button class="nav-link menu-list" type="button" data-bs-toggle="modal" data-bs-target="#modalLogin"
+                    href="/login">Login</button>
             </li>
             <li class="nav-item">
                 <a class="nav-link menu-list" href="#about">Sobre</a>
@@ -65,7 +66,7 @@
                         cupons de desconto. E o melhor: você pode viajar com segurança, pois
                         todos os nossos motoristas são verificados e treinados. Não espere mais,
                         cadastre-se no Moto Move e experimente a melhor forma de se locomover pela cidade! </p>
-                    <a href="#" class="btn button">Seja um cliente</a>
+                    <a href="/cadastro/cliente" class="btn button">Seja um cliente</a>
                 </div>
             </div>
         </div>
@@ -81,7 +82,7 @@
                         exclusivos, como descontos em combustível, manutenção, seguro e muito mais.
                         Não perca essa oportunidade. Cadastre-se no Moto Move agora mesmo e comece
                         a dirigir! </p>
-                    <a href="#" class="btn button">Seja um motorista</a>
+                    <a href="/cadastro/motorista" class="btn button">Seja um motorista</a>
                 </div>
             </div>
         </div>
@@ -101,7 +102,8 @@
                     <ion-icon name="mail-outline"></ion-icon><b>motomovecomunicacao@email.com</b>
                 </li>
                 <li>
-                    <a href="https://www.whatsapp.com/" target="_blank" class="btn button"><ion-icon name="logo-whatsapp"></ion-icon> Entrar em contato</a>
+                    <a href="https://www.whatsapp.com/" target="_blank" class="btn button"><ion-icon
+                            name="logo-whatsapp"></ion-icon> Entrar em contato</a>
                 </li>
             </ul>
         </div>
@@ -110,3 +112,41 @@
         </div>
     </div>
 </section>
+
+{{!-- Modal --}}
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Login</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-login">
+                <form method="">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="email">E-mail</label>
+                        <input type="email" id="email" class="form-control" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="senha">Senha</label>
+                        <input type="password" id="senha" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#">Esqueci minha senha</a>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" class="btn btn-block">Entrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

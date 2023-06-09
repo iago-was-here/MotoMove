@@ -71,13 +71,13 @@ hr {
 }
 
 /* Contact */
-#contact li ion-icon{
+#contact li ion-icon {
     color: var(--main-color);
     font-size: 2rem;
     margin-bottom: -.7rem;
 }
 
-#contact a ion-icon{
+#contact a ion-icon {
     color: var(--white-color);
     font-size: 1.5rem;
     margin-bottom: -.35rem;
@@ -85,6 +85,41 @@ hr {
 
 #contact li {
     margin-top: 2rem;
+}
+
+/* Login */
+.modal .close {
+    border: none;
+    background-color: var(--white-color);
+    font-size: 2rem;
+}
+
+.modal .close:hover {
+    color: var(--light-main-color);
+}
+
+.submit {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.submit button {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.submit button:hover {
+    background-color: var(--light-main-color);
+    border-color: var(--light-main-color);
+}
+
+.form-login label {
+    color: var(--black-color);
+}
+
+.form-login input {
+    border-color: var(--main-color);
 }
 
 /* Footer */

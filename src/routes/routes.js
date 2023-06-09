@@ -15,12 +15,6 @@ routes.get('/inicio', function(req, res) {
 });
 
 // Login
-routes.get('/login', function(req, res) {
-  const dadosTemplate = {
-    title: 'MOTO MOVE | Login' 
-  };
-  res.render('login', dadosTemplate);
-});
 
 // Cadastro Cliente
 routes.get('/cadastro/cliente', function(req, res) {
