@@ -1,11 +1,107 @@
 :root {
     --black-color: #000000;
     --dark-grey-color: #292929;
-    --main-red-color: #FF0000;
-    --light-grey-color: #7A7A7A;
+    --main-color: #FF3D00;
+    --light-main-color: #ff9270;
+    --light-grey-color: #ebe5e5;
     --white-color: #FFFFFF;
 }
 
-body {
-    background-color: #000000;
+/* Menu */
+.start-menu {
+    background-color: var(--main-color);
+}
+
+.logo-menu {
+    width: 9rem;
+}
+
+.menu-list {
+    color: var(--white-color);
+}
+
+.menu-list:hover {
+    color: var(--light-main-color);
+}
+
+hr {
+    width: 50%;
+    border-color: var(--main-color);
+    border-top: .2rem solid var(--main-color);
+    opacity: 100%;
+}
+
+/* About */
+.img-smartphone {
+    width: 25rem;
+}
+
+/* Register */
+#register {
+    background-color: var(--light-grey-color);
+    height: 37rem;
+}
+
+#register hr {
+    width: 21%;
+}
+
+.card-register {
+    width: 35rem;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-register p {
+    text-align: justify;
+}
+
+.button {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.button:hover {
+    background-color: var(--light-main-color);
+}
+
+#register ion-icon {
+    color: var(--main-color);
+    font-size: 5rem;
+}
+
+/* Contact */
+#contact li ion-icon{
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: -.7rem;
+}
+
+#contact a ion-icon{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin-bottom: -.35rem;
+}
+
+#contact li {
+    margin-top: 2rem;
+}
+
+/* Footer */
+.infos {
+    background-color: var(--light-main-color);
+}
+
+.social {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.social:hover {
+    color: var(--light-main-color);
+}
+
+.copyright {
+    background-color: var(--main-color);
+    color: var(--white-color);
 }
