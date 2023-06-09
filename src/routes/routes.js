@@ -1,8 +1,18 @@
-import express  from 'express';
+const express = require('express');
 const routes = express.Router();
 
-routes.get("/",function(req, res){
-    console.log('Eita');
-})
+routes.get('/',function(req, res){
+  console.log('Eita');
+  res.send('Eita');
+});
 
-export default routes;
+// Tela Inicial sem login
+routes.get('/inicio', function(req, res) {
+  const dadosTemplate = {
+    title: 'MOTO MOVE | Bem-Vindo',
+    style: 'public/css/style.css'
+  };
+  res.render('inicio', dadosTemplate);
+});
+
+module.exports =  routes;
