@@ -9,10 +9,15 @@ routes.get('/',function(req, res){
 // Tela Inicial sem login
 routes.get('/inicio', function(req, res) {
   const dadosTemplate = {
-    title: 'MOTO MOVE | Bem-Vindo',
-    style: 'public/css/style.css'
+    title: 'MOTO MOVE | Bem-Vindo'
   };
   res.render('inicio', dadosTemplate);
 });
 
-module.exports =  routes;
+// Login
+
+// Cadastro Cliente
+
+// Cadastro Motorista
+
+module.exports = routes;
