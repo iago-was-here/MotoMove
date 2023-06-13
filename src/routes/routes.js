@@ -20,4 +20,12 @@ routes.get('/inicio', function(req, res) {
 
 // Cadastro Motorista
 
+// Admin
+routes.get('/admin', function(req, res) {
+  const dadosTemplate = {
+    title: 'MOTO MOVE | Administrador'
+  };
+  res.render('dashboard-admin', dadosTemplate);
+})
+
 module.exports = routes;
