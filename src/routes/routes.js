@@ -17,19 +17,7 @@ routes.get('/inicio', function(req, res) {
 // Login
 
 // Cadastro Cliente
-routes.get('/cadastro/cliente', function(req, res) {
-  const dadosTemplate = {
-    title: 'MOTO MOVE | Cadastro Cliente'
-  };
-  res.render('cadastro-cliente', dadosTemplate);
-});
 
 // Cadastro Motorista
-routes.get('/cadastro/motorista', function(req, res) {
-  const dadosTemplate = {
-    title: 'MOTO MOVE | Cadastro Motorista'
-  };
-  res.render('cadastro-motorista', dadosTemplate);
-});
 
 module.exports = routes;

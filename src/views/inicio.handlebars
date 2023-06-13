@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top start-menu">
-    <a class="navbar-brand" href="#">
-        <img src="public/img/logo.png" alt="..." height="60">
+    <a class="navbar-brand" href="/inicio">
+        <img src="public/img/logo-removebg-preview.png" alt="..." height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,8 +9,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <button class="nav-link menu-list" type="button" data-bs-toggle="modal" data-bs-target="#modalLogin"
-                    href="/login">Login</button>
+                <button class="nav-link menu-list" type="button" data-bs-toggle="modal"
+                    data-bs-target="#modalLogin">Login</button>
             </li>
             <li class="nav-item">
                 <a class="nav-link menu-list" href="#about">Sobre</a>
@@ -66,7 +66,8 @@
                         cupons de desconto. E o melhor: você pode viajar com segurança, pois
                         todos os nossos motoristas são verificados e treinados. Não espere mais,
                         cadastre-se no Moto Move e experimente a melhor forma de se locomover pela cidade! </p>
-                    <a href="/cadastro/cliente" class="btn button">Seja um cliente</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modalCadastroCliente" class="btn button">Seja um
+                        cliente</a>
                 </div>
             </div>
         </div>
@@ -82,7 +83,8 @@
                         exclusivos, como descontos em combustível, manutenção, seguro e muito mais.
                         Não perca essa oportunidade. Cadastre-se no Moto Move agora mesmo e comece
                         a dirigir! </p>
-                    <a href="/cadastro/motorista" class="btn button">Seja um motorista</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modalCadastroMotorista" class="btn button">Seja um
+                        motorista</a>
                 </div>
             </div>
         </div>
@@ -113,7 +115,7 @@
     </div>
 </section>
 
-{{!-- Modal --}}
+{{!-- Modal para login --}}
 <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -131,8 +133,8 @@
                         <input type="email" id="email" class="form-control" />
                     </div>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="senha">Senha</label>
-                        <input type="password" id="senha" class="form-control" />
+                        <label class="form-label" for="password">Senha</label>
+                        <input type="password" id="password" class="form-control" />
                     </div>
                     <div class="row">
                         <div class="col">
@@ -143,6 +145,150 @@
                         <button type="submit" class="btn btn-block">Entrar</button>
                     </div>
                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para cadastro de cliente -->
+<div class="modal" id="modalCadastroCliente">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Cliente</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
+                                            id="nome">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone">
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para cadastro de motorista -->
+<div class="modal" id="modalCadastroMotorista">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Cliente</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
+                                            id="nome">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone">
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Documento do veículo"
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número da conta bancária"
+                                            name="dadosBancarios" id="dadosBancarios">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"
+                                            id="cnpj">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

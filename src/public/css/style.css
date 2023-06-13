@@ -1,6 +1,6 @@
 :root {
     --black-color: #000000;
-    --dark-grey-color: #292929;
+    --dark-grey-color: #474747;
     --main-color: #FF3D00;
     --light-main-color: #ff9270;
     --light-grey-color: #ebe5e5;
@@ -27,7 +27,7 @@
 hr {
     width: 50%;
     border-color: var(--main-color);
-    border-top: .2rem solid var(--main-color);
+    border-top: 3px solid var(--main-color);
     opacity: 100%;
 }
 
@@ -120,6 +120,17 @@ hr {
 
 .form-login input {
     border-color: var(--main-color);
+}
+
+/* Register Forms*/
+.form-header hr {
+    width: 40%;
+}
+
+.form-body hr {
+    width: 100%;
+    border-color: var(--dark-grey-color);
+    border-top: 1px solid rgb(187, 187, 187);
 }
 
 /* Footer */
