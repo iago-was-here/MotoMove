@@ -63,6 +63,10 @@ hr {
     color: var(--white-color);
 }
 
+#register .button {
+    color: var(--white-color);
+}
+
 .button:hover {
     background-color: var(--light-main-color);
 }
@@ -87,6 +91,10 @@ hr {
 
 #contact li {
     margin-top: 2rem;
+}
+
+#contact .button {
+    color: var(--white-color);
 }
 
 /* ************* Login ************* */
