@@ -1,159 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top start-menu">
-    <a class="navbar-brand" href="/inicio">
-        <img src="public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <button class="nav-link menu-list" type="button" data-bs-toggle="modal"
-                    data-bs-target="#modalLogin">Login</button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-list" href="#about">Sobre</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-list" href="#register">Cadastre-se</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-list" href="#contact">Contato</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-
-<section id="about">
-    <div class="content row p-5">
-        <div class="col p-5">
-            <h3 class="mt-5 ms-5">Sobre Nós</h3>
-            <hr class="ms-5">
-            <p class="mt-5 ms-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi provident expedita autem error laboriosam alias
-                quisquam ipsum ipsa, nobis voluptatem assumenda repellat
-                quidem dolorem recusandae odio voluptatibus accusantium
-                esse hic. Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Nesciunt eum voluptatem, optio vero
-                quas deleniti dolore temporibus autem at culpa. Repudiandae
-                quo cum quos consectetur dolor exercitationem facilis ipsa quis?
-            </p>
-        </div>
-        <div class="col p-5 ms-4">
-            <img src="public/img/app.png" alt="Foto App" title="Foto App" class="img-smartphone">
-        </div>
-    </div>
-</section>
-
-<section id="register">
-    <div class="row ms-5 p-5">
-        <div class="col">
-            <h3 class="mt-5 ms-5">Cadastre-se</h3>
-            <hr class="ms-5">
-        </div>
-    </div>
-    <div class="content row ms-5">
-        <div class="col">
-            <div class="card card-register">
-                <ion-icon name="person-outline" class="card-img-top"></ion-icon>
-                <div class="card-body">
-                    <p>Você precisa de um transporte rápido, barato e seguro? Então você precisa
-                        conhecer o Moto Move. Com o Moto Move, você pode pedir uma moto em poucos segundos,
-                        escolher a forma de pagamento que preferir, e acompanhar o trajeto pelo mapa.
-                        Você também pode avaliar o motorista e o serviço, e receber ofertas especiais e
-                        cupons de desconto. E o melhor: você pode viajar com segurança, pois
-                        todos os nossos motoristas são verificados e treinados. Não espere mais,
-                        cadastre-se no Moto Move e experimente a melhor forma de se locomover pela cidade! </p>
-                    <a data-bs-toggle="modal" data-bs-target="#modalCadastroCliente" class="btn button">Seja um
-                        cliente</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card-register">
-                <ion-icon name="bicycle-outline" class="card-img-top"></ion-icon>
-                <div class="card-body">
-                    <p>Você gosta de dirigir, conhecer pessoas e ter flexibilidade no seu horário?
-                        Então você pode se tornar um motorista de aplicativo e ganhar dinheiro
-                        fazendo o que gosta. Com o Moto Move, você pode escolher quando e onde
-                        trabalhar, receber pagamentos rápidos e seguros, e contar com o suporte da
-                        nossa equipe sempre que precisar. Além disso, você pode aproveitar benefícios
-                        exclusivos, como descontos em combustível, manutenção, seguro e muito mais.
-                        Não perca essa oportunidade. Cadastre-se no Moto Move agora mesmo e comece
-                        a dirigir! </p>
-                    <a data-bs-toggle="modal" data-bs-target="#modalCadastroMotorista" class="btn button">Seja um
-                        motorista</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="content row p-5">
-        <div class="col p-5">
-            <h3 class="mt-5 ms-5">Entre em contato</h3>
-            <hr class="ms-5">
+<div class="dashboard row">
+    <div class="side-bar col-2">
+        <div class="container p-4">
+            <img src="../public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60" class="mb-4">
             <ul class="list-unstyled">
-                <li>
-                    Queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
+                <li class="p-1">
+                    <a href="/admin" class="menu-list" data-bs-toggle="modal" data-bs-target="#modalCadastroCliente">
+                        <ion-icon name="person-add-outline"></ion-icon> Novo Cliente
+                    </a>
                 </li>
-                <li>
-                    <ion-icon name="mail-outline"></ion-icon><b>motomovecomunicacao@email.com</b>
+                <hr>
+                <li class="p-1">
+                    <a href="/admin" class="menu-list" data-bs-toggle="modal" data-bs-target="#modalCadastroMotorista">
+                        </ion-icon><ion-icon name="bicycle-outline"></ion-icon> Novo Motorista
+                    </a>
                 </li>
-                <li>
-                    <a href="https://www.whatsapp.com/" target="_blank" class="btn button"><ion-icon
-                            name="logo-whatsapp"></ion-icon> Entrar em contato</a>
+                <hr>
+                <li class="p-1">
+                    <a href="/admin" class="menu-list">
+                        <ion-icon name="log-out-outline"></ion-icon> Sair
+                    </a>
                 </li>
             </ul>
         </div>
-        <div class="col p-5 ms-4">
-            <img src="public/img/logo-quadrada.png" alt="Foto App" title="Foto App" class="img-smartphone">
-        </div>
     </div>
-</section>
-
-{{!-- Modal para login --}}
-<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Login</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <div class="content col-2 p-5">
+        <a href="/clientes">
+            <div class="item p-4">
+                <ion-icon name="person-outline"></ion-icon>
+                <h5>Clientes Cadastrados</h5>
             </div>
-            <div class="modal-body form-login">
-                <form method="">
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="email">E-mail</label>
-                        <input type="email" id="email" class="form-control" />
-                    </div>
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="password">Senha</label>
-                        <input type="password" id="password" class="form-control" />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a href="#">Esqueci minha senha</a>
-                        </div>
-                    </div>
-                    <div class="submit">
-                        <button type="submit" class="btn btn-block">Entrar</button>
-                    </div>
-                </form>
+        </a>
+        <a href="/motoristas">
+            <div class="item p-3">
+                <ion-icon name="bicycle-outline"></ion-icon>
+                <h5>Motoristas Cadastrados</h5>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </a>
+        <a href="/corridas">
+            <div class="item p-4">
+                <ion-icon name="map-outline"></ion-icon>
+                <h5>Corridas</h5>
             </div>
-        </div>
+        </a>
+    </div>
+    <div class="graphic col-4 p-5">
+        <h3>Faturamento</h3>
+        <hr>
     </div>
 </div>
 
-<!-- Modal para cadastro de cliente -->
+{{!-- Modal para cadastro de cliente --}}
 <div class="modal" id="modalCadastroCliente">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

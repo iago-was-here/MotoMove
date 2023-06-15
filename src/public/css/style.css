@@ -1,11 +1,226 @@
 :root {
     --black-color: #000000;
-    --dark-grey-color: #292929;
-    --main-red-color: #FF0000;
-    --light-grey-color: #7A7A7A;
+    --dark-grey-color: #474747;
+    --main-color: #FF3D00;
+    --light-main-color: #ff9270;
+    --light-grey-color: #ebe5e5;
     --white-color: #FFFFFF;
 }
 
-body {
-    background-color: #000000;
+/* ******************************** Homepage ******************************** */
+
+/* ************* Menu ************* */
+.start-menu {
+    background-color: var(--main-color);
+}
+
+.logo-menu {
+    width: 9rem;
+}
+
+.menu-list {
+    color: var(--white-color);
+}
+
+.menu-list:hover {
+    color: var(--light-main-color);
+}
+
+hr {
+    width: 50%;
+    border-color: var(--main-color);
+    border-top: 3px solid var(--main-color);
+    opacity: 100%;
+}
+
+/* ************* About ************* */
+.img-smartphone {
+    width: 25rem;
+}
+
+/* ************* Register ************* */
+#register {
+    background-color: var(--light-grey-color);
+    height: 37rem;
+}
+
+#register hr {
+    width: 21%;
+}
+
+.card-register {
+    width: 35rem;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-register p {
+    text-align: justify;
+}
+
+.button {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.button:hover {
+    background-color: var(--light-main-color);
+}
+
+#register ion-icon {
+    color: var(--main-color);
+    font-size: 5rem;
+}
+
+/* ************* Contact ************* */
+#contact li ion-icon {
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: -.7rem;
+}
+
+#contact a ion-icon {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin-bottom: -.35rem;
+}
+
+#contact li {
+    margin-top: 2rem;
+}
+
+/* ************* Login ************* */
+.modal .close {
+    border: none;
+    background-color: var(--white-color);
+    font-size: 2rem;
+}
+
+.modal .close:hover {
+    color: var(--light-main-color);
+}
+
+.submit {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.submit button {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.submit button:hover {
+    background-color: var(--light-main-color);
+    border-color: var(--light-main-color);
+}
+
+.form-login label {
+    color: var(--black-color);
+}
+
+.form-login input {
+    border-color: var(--main-color);
+}
+
+/* ************* Register Forms ************* */
+.form-header hr {
+    width: 40%;
+}
+
+.form-body hr {
+    width: 100%;
+    border-color: var(--dark-grey-color);
+    border-top: 1px solid rgb(187, 187, 187);
+}
+
+/* ******************************** Admin Dashboard ******************************** */
+
+/* ************* Menu ************* */
+.side-bar {
+    background-color: var(--main-color);
+    width: 17%;
+    color: var(--white-color);
+}
+
+.side-bar li ion-icon {
+    font-size: 1.5rem;
+    margin-bottom: -.35rem;
+}
+
+.side-bar li:hover {
+    cursor: pointer;
+}
+
+.side-bar a {
+    text-decoration: none;
+}
+
+.side-bar ul hr {
+    width: 100%;
+    border-color: var(--main-color);
+    border-top: 1px solid var(--light-grey-color);
+    opacity: 100%;
+}
+
+.dashboard .content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 3em;
+    grid-row-gap: 3em;
+    width: 26%;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.item {
+    background-color: var(--light-grey-color);
+    width: 15rem;
+    height: 8rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border: solid var(--ligth-grey-color);
+    border-radius: 10px;
+}
+
+.item ion-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.item:hover {
+    background-color: var(--light-main-color);
+    cursor: pointer;
+}
+
+.graphic {
+    width: 55%;
+}
+
+/* ************* Listas ************* */
+.list ion-icon {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+/* ************* Footer ************* */
+.infos {
+    background-color: var(--light-main-color);
+}
+
+.social {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.social:hover {
+    color: var(--light-main-color);
+}
+
+.copyright {
+    background-color: var(--main-color);
+    color: var(--white-color);
 }
