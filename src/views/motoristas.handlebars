@@ -1,0 +1,152 @@
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top start-menu">
+    <a class="navbar-brand" href="/inicio">
+        <img src="public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link menu-list" href="/admin" data-bs-toggle="modal"
+                    data-bs-target="#modalCadastroMotorista">Novo motorista
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link menu-list" href="/admin">Voltar</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+<div class="list p-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <h4>Motoristas Cadastrados</h4>
+                <hr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                <td>Iago</td>
+                <td>iago@email.com</td>
+                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                <td>Filipe</td>
+                <td>filipe@email.com</td>
+                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                <td>Caroline</td>
+                <td>caroline@email.com</td>
+                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                <td>Luan</td>
+                <td>luan@email.com</td>
+                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                <td>Caio</td>
+                <td>caio@email.com</td>
+                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para cadastro de motorista -->
+<div class="modal" id="modalCadastroMotorista">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Motorista</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
+                                            id="nome">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone">
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Documento do veículo"
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número da conta bancária"
+                                            name="dadosBancarios" id="dadosBancarios">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"
+                                            id="cnpj">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

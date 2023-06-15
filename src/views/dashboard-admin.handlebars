@@ -3,23 +3,192 @@
         <div class="container p-4">
             <img src="../public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60" class="mb-4">
             <ul class="list-unstyled">
-                <li class="p-1"><ion-icon name="person-add-outline"></ion-icon> Novo Cliente</li>
+                <li class="p-1">
+                    <a href="/admin" class="menu-list" data-bs-toggle="modal" data-bs-target="#modalCadastroCliente">
+                        <ion-icon name="person-add-outline"></ion-icon> Novo Cliente
+                    </a>
+                </li>
                 <hr>
-                <li class="p-1"></ion-icon><ion-icon name="bicycle-outline"></ion-icon> Novo Motorista</li>
+                <li class="p-1">
+                    <a href="/admin" class="menu-list" data-bs-toggle="modal" data-bs-target="#modalCadastroMotorista">
+                        </ion-icon><ion-icon name="bicycle-outline"></ion-icon> Novo Motorista
+                    </a>
+                </li>
                 <hr>
-                <li class="p-1"><ion-icon name="log-out-outline"></ion-icon> Sair</li>
+                <li class="p-1">
+                    <a href="/admin" class="menu-list">
+                        <ion-icon name="log-out-outline"></ion-icon> Sair
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
     <div class="content col-2 p-5">
-        <div class="item p-4"><ion-icon name="person-outline"></ion-icon>
-            <h5>Clientes Cadastrados</h5>
+        <a href="/clientes">
+            <div class="item p-4">
+                <ion-icon name="person-outline"></ion-icon>
+                <h5>Clientes Cadastrados</h5>
+            </div>
+        </a>
+        <a href="/motoristas">
+            <div class="item p-3">
+                <ion-icon name="bicycle-outline"></ion-icon>
+                <h5>Motoristas Cadastrados</h5>
+            </div>
+        </a>
+        <a href="/corridas">
+            <div class="item p-4">
+                <ion-icon name="map-outline"></ion-icon>
+                <h5>Corridas</h5>
+            </div>
+        </a>
+    </div>
+    <div class="graphic col-4 p-5">
+        <h3>Faturamento</h3>
+        <hr>
+    </div>
+</div>
+
+{{!-- Modal para cadastro de cliente --}}
+<div class="modal" id="modalCadastroCliente">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Cliente</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
+                                            id="nome">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone">
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
         </div>
-        <div class="item p-3"><ion-icon name="bicycle-outline"></ion-icon>
-            <h5>Motoristas Cadastrados</h5>
-        </div>
-        <div class="item p-4"><ion-icon name="map-outline"></ion-icon>
-            <h5>Corridas</h5>
+    </div>
+</div>
+
+<!-- Modal para cadastro de motorista -->
+<div class="modal" id="modalCadastroMotorista">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Motorista</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
+                                            id="nome">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone">
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Documento do veículo"
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número da conta bancária"
+                                            name="dadosBancarios" id="dadosBancarios">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"
+                                            id="cnpj">
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
         </div>
     </div>
 </div>
