@@ -9,6 +9,19 @@
 
 /* ******************************** Homepage ******************************** */
 
+/* ************* Alerts ************* */
+.alert-success {
+    background-color: rgb(148, 243, 148);
+    border: 1px solid green;
+    padding: .4rem;
+}
+
+.alert-danger {
+    background-color: rgb(250, 163, 163);
+    border: 1px solid red;
+    padding: .4rem;
+}
+
 /* ************* Menu ************* */
 .start-menu {
     background-color: var(--main-color);
