@@ -7,7 +7,9 @@
     --white-color: #FFFFFF;
 }
 
-/* Menu */
+/* ******************************** Homepage ******************************** */
+
+/* ************* Menu ************* */
 .start-menu {
     background-color: var(--main-color);
 }
@@ -31,12 +33,12 @@ hr {
     opacity: 100%;
 }
 
-/* About */
+/* ************* About ************* */
 .img-smartphone {
     width: 25rem;
 }
 
-/* Register */
+/* ************* Register ************* */
 #register {
     background-color: var(--light-grey-color);
     height: 37rem;
@@ -70,7 +72,7 @@ hr {
     font-size: 5rem;
 }
 
-/* Contact */
+/* ************* Contact ************* */
 #contact li ion-icon {
     color: var(--main-color);
     font-size: 2rem;
@@ -87,7 +89,7 @@ hr {
     margin-top: 2rem;
 }
 
-/* Login */
+/* ************* Login ************* */
 .modal .close {
     border: none;
     background-color: var(--white-color);
@@ -122,7 +124,7 @@ hr {
     border-color: var(--main-color);
 }
 
-/* Register Forms*/
+/* ************* Register Forms ************* */
 .form-header hr {
     width: 40%;
 }
@@ -133,7 +135,78 @@ hr {
     border-top: 1px solid rgb(187, 187, 187);
 }
 
-/* Footer */
+/* ******************************** Admin Dashboard ******************************** */
+
+/* ************* Menu ************* */
+.side-bar {
+    background-color: var(--main-color);
+    width: 17%;
+    color: var(--white-color);
+}
+
+.side-bar li ion-icon {
+    font-size: 1.5rem;
+    margin-bottom: -.35rem;
+}
+
+.side-bar li:hover {
+    cursor: pointer;
+}
+
+.side-bar a {
+    text-decoration: none;
+}
+
+.side-bar ul hr {
+    width: 100%;
+    border-color: var(--main-color);
+    border-top: 1px solid var(--light-grey-color);
+    opacity: 100%;
+}
+
+.dashboard .content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 3em;
+    grid-row-gap: 3em;
+    width: 26%;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.item {
+    background-color: var(--light-grey-color);
+    width: 15rem;
+    height: 8rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border: solid var(--ligth-grey-color);
+    border-radius: 10px;
+}
+
+.item ion-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.item:hover {
+    background-color: var(--light-main-color);
+    cursor: pointer;
+}
+
+.graphic {
+    width: 55%;
+}
+
+/* ************* Listas ************* */
+.list ion-icon {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+/* ************* Footer ************* */
 .infos {
     background-color: var(--light-main-color);
 }
