@@ -1,3 +1,4 @@
+<div class="row sup-bar"></div>
 <div class="dashboard row">
     <div class="side-bar col-2">
         <div class="container p-4">
@@ -16,7 +17,7 @@
                 </li>
                 <hr>
                 <li class="p-1">
-                    <a href="/admin" class="menu-list">
+                    <a href="/inicio" class="menu-list">
                         <ion-icon name="log-out-outline"></ion-icon> Sair
                     </a>
                 </li>
@@ -46,6 +47,8 @@
     <div class="graphic col-4 p-5">
         <h3>Faturamento</h3>
         <hr>
+        <canvas id="lineChart"></canvas>
+        <h6>* Valores numéricos dados em milhares</h6>
     </div>
 </div>
 
@@ -207,3 +210,34 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctxL = document.getElementById("lineChart").getContext('2d');
+    var gradientFill = ctxL.createLinearGradient(0, 0, 0, 290);
+    gradientFill.addColorStop(0, "#FF3D00");
+    gradientFill.addColorStop(1, "#FF3D00");
+    var myLineChart = new Chart(ctxL, {
+        type: 'line',
+        data: {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+            datasets: [
+                {
+                    label: "Faturamento mensal primeiro semestre de 2023",
+                    data: [0, 65, 45, 65, 35, 65, 58],
+                    backgroundColor: gradientFill,
+                    borderColor: [
+                        '#FF3D00',
+                    ],
+                    borderWidth: 2,
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "#FF3D00",
+                }
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>

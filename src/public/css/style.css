@@ -159,6 +159,11 @@ hr {
 /* ******************************** Admin Dashboard ******************************** */
 
 /* ************* Menu ************* */
+.sup-bar {
+    background-color: var(--main-color);
+    height: 3rem;
+}
+
 .side-bar {
     background-color: var(--main-color);
     width: 17%;
@@ -221,7 +226,13 @@ hr {
     width: 55%;
 }
 
-/* ************* Listas ************* */
+/* ************* Graphic ************* */
+#lineChart {
+    position: absolute;
+    margin: 45px 0 0 0px;
+}
+
+/* ************* Lists ************* */
 .list ion-icon {
     font-size: 1.5rem;
     color: var(--main-color);
