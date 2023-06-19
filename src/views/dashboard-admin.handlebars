@@ -1,3 +1,4 @@
+<div class="row sup-bar"></div>
 <div class="dashboard row">
     <div class="side-bar col-2">
         <div class="container p-4">
@@ -16,7 +17,7 @@
                 </li>
                 <hr>
                 <li class="p-1">
-                    <a href="/admin" class="menu-list">
+                    <a href="/inicio" class="menu-list">
                         <ion-icon name="log-out-outline"></ion-icon> Sair
                     </a>
                 </li>
@@ -46,6 +47,8 @@
     <div class="graphic col-4 p-5">
         <h3>Faturamento</h3>
         <hr>
+        <canvas id="lineChart"></canvas>
+        <h6>* Valores numéricos dados em milhares</h6>
     </div>
 </div>
 
@@ -65,33 +68,40 @@
                         </div>
                         <div class="form-body">
                             <form action="" method="">
+                                <div class="alert alert-success" role="alert">
+                                    Exemplo mensagem de sucesso.
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Exemplo mensagem de erro.
+                                </div>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
-                                            id="nome">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome"
+                                            required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Telefone" name="telefone"
-                                            id="telefone">
+                                            id="telefone" required>
                                     </div>
                                     <div class="col">
                                         <input type="date" class="form-control" placeholder="Data de nascimento"
-                                            name="dataNascimento" id="dataNascimento">
+                                            name="dataNascimento" id="dataNascimento" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="E-mail" name="email"
-                                            id="email">
+                                            id="email" required>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Senha" name="senha"
-                                            id="senha">
+                                            id="senha" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
@@ -127,53 +137,61 @@
                         </div>
                         <div class="form-body">
                             <form action="" method="">
+                                <div class="alert alert-success" role="alert">
+                                    Exemplo mensagem de sucesso.
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Exemplo mensagem de erro.
+                                </div>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
-                                            id="nome">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome"
+                                            required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Telefone" name="telefone"
-                                            id="telefone">
+                                            id="telefone" required>
                                     </div>
                                     <div class="col">
                                         <input type="date" class="form-control" placeholder="Data de nascimento"
-                                            name="dataNascimento" id="dataNascimento">
+                                            name="dataNascimento" id="dataNascimento" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="E-mail" name="email"
-                                            id="email">
+                                            id="email" required>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Senha" name="senha"
-                                            id="senha">
+                                            id="senha" required>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh"
+                                            required>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Documento do veículo"
-                                            name="documentoDoVeiculo" id="documentoDoVeiculo">
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Número da conta bancária"
-                                            name="dadosBancarios" id="dadosBancarios">
+                                            name="dadosBancarios" id="dadosBancarios" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"
-                                            id="cnpj">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" id="cnpj"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
@@ -192,3 +210,34 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctxL = document.getElementById("lineChart").getContext('2d');
+    var gradientFill = ctxL.createLinearGradient(0, 0, 0, 290);
+    gradientFill.addColorStop(0, "#FF3D00");
+    gradientFill.addColorStop(1, "#FF3D00");
+    var myLineChart = new Chart(ctxL, {
+        type: 'line',
+        data: {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
+            datasets: [
+                {
+                    label: "Faturamento mensal primeiro semestre de 2023",
+                    data: [0, 65, 45, 65, 35, 65, 58],
+                    backgroundColor: gradientFill,
+                    borderColor: [
+                        '#FF3D00',
+                    ],
+                    borderWidth: 2,
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "#FF3D00",
+                }
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>

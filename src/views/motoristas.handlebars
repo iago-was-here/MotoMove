@@ -34,35 +34,40 @@
                 <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                 <td>Iago</td>
                 <td>iago@email.com</td>
-                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                        class="btn btn-primary">Editar</a></td>
                 <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
             <tr>
                 <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                 <td>Filipe</td>
                 <td>filipe@email.com</td>
-                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                        class="btn btn-primary">Editar</a></td>
                 <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
             <tr>
                 <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                 <td>Caroline</td>
                 <td>caroline@email.com</td>
-                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                        class="btn btn-primary">Editar</a></td>
                 <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
             <tr>
                 <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                 <td>Luan</td>
                 <td>luan@email.com</td>
-                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                        class="btn btn-primary">Editar</a></td>
                 <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
             <tr>
                 <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                 <td>Caio</td>
                 <td>caio@email.com</td>
-                <td><a href="" class="btn btn-primary">Editar</a></td>
+                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                        class="btn btn-primary">Editar</a></td>
                 <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
         </tbody>
@@ -85,58 +90,156 @@
                         </div>
                         <div class="form-body">
                             <form action="" method="">
+                                <div class="alert alert-success" role="alert">
+                                    Exemplo mensagem de sucesso.
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Exemplo mensagem de erro.
+                                </div>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="Nome" name="nome"
-                                            id="nome">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome"
+                                            required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Telefone" name="telefone"
-                                            id="telefone">
+                                            id="telefone" required>
                                     </div>
                                     <div class="col">
                                         <input type="date" class="form-control" placeholder="Data de nascimento"
-                                            name="dataNascimento" id="dataNascimento">
+                                            name="dataNascimento" id="dataNascimento" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="E-mail" name="email"
-                                            id="email">
+                                            id="email" required>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Senha" name="senha"
-                                            id="senha">
+                                            id="senha" required>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh"
+                                            required>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Documento do veículo"
-                                            name="documentoDoVeiculo" id="documentoDoVeiculo">
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Número da conta bancária"
-                                            name="dadosBancarios" id="dadosBancarios">
+                                            name="dadosBancarios" id="dadosBancarios" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"
-                                            id="cnpj">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" id="cnpj"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col text-center">
                                         <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para editar motorista -->
+<div class="modal" id="modalEdicaoMotorista">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Editar Motorista</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="alert alert-success" role="alert">
+                                    Exemplo mensagem de sucesso.
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Exemplo mensagem de erro.
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome"
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Telefone" name="telefone"
+                                            id="telefone" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="date" class="form-control" placeholder="Data de nascimento"
+                                            name="dataNascimento" id="dataNascimento" required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="E-mail" name="email"
+                                            id="email" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Senha" name="senha"
+                                            id="senha" required>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNH" name="cnh" id="cnh"
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Documento do veículo"
+                                            name="documentoDoVeiculo" id="documentoDoVeiculo" required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número da conta bancária"
+                                            name="dadosBancarios" id="dadosBancarios" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" id="cnpj"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Salvar edições</button>
                                     </div>
                                 </div>
                             </form>
