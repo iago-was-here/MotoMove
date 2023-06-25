@@ -9,6 +9,19 @@
 
 /* ******************************** Homepage ******************************** */
 
+/* ************* Alerts ************* */
+.alert-success {
+    background-color: rgb(148, 243, 148);
+    border: 1px solid green;
+    padding: .4rem;
+}
+
+.alert-danger {
+    background-color: rgb(250, 163, 163);
+    border: 1px solid red;
+    padding: .4rem;
+}
+
 /* ************* Menu ************* */
 .start-menu {
     background-color: var(--main-color);
@@ -63,6 +76,10 @@ hr {
     color: var(--white-color);
 }
 
+#register .button {
+    color: var(--white-color);
+}
+
 .button:hover {
     background-color: var(--light-main-color);
 }
@@ -87,6 +104,10 @@ hr {
 
 #contact li {
     margin-top: 2rem;
+}
+
+#contact .button {
+    color: var(--white-color);
 }
 
 /* ************* Login ************* */
@@ -138,6 +159,11 @@ hr {
 /* ******************************** Admin Dashboard ******************************** */
 
 /* ************* Menu ************* */
+.sup-bar {
+    background-color: var(--main-color);
+    height: 3rem;
+}
+
 .side-bar {
     background-color: var(--main-color);
     width: 17%;
@@ -200,7 +226,13 @@ hr {
     width: 55%;
 }
 
-/* ************* Listas ************* */
+/* ************* Graphic ************* */
+#lineChart {
+    position: absolute;
+    margin: 45px 0 0 0px;
+}
+
+/* ************* Lists ************* */
 .list ion-icon {
     font-size: 1.5rem;
     color: var(--main-color);
