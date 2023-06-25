@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const admin = require('./Admin');
+const admin = require('./admin');
+const public = require('./public');
 const database = require('../database');
 
 router.get('/', (req, res) => {
@@ -16,5 +17,6 @@ router.get('/connection', async (req, res) => {
 });
 
 router.use('/', admin);
+router.use('/', public);
 
 module.exports = router;

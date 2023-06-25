@@ -9,6 +9,7 @@ const port = process.env.PORT;
 app.engine('handlebars', exphbs.engine())
   .set('view engine', 'handlebars')
   .set('views', __dirname + '/views')
+  .use(express.urlencoded({ extended: true }))
   .use('/public', express.static(__dirname + '/public/'))
   .use('/bootstrap', express.static('node_modules/bootstrap/'))
   .use('/', routes);
