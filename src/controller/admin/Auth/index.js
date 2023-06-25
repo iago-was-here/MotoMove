@@ -2,32 +2,46 @@ const db = require('../../../database/index');
 const bcrypt = require('bcrypt');
 
 const authenticate = (req, res, next) => {
-    if (req.session.user) {
+    if (req.session.usuario) {
         next();
     } else {
         res.redirect('/login');
     }
 };
 
-// const login = async (req, res) => {
-//     const { email, password } = req.body;
-//     const [user] = db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
+const login = async (req, res) => {
+    const { email, password } = req.body;
 
-//     if (user) {
-//         bcrypt.compare(password, user[0].password, (err, isMatch) => {
-//             if (isMatch) {
-//                 req.session.user = user[0];
-//                 return res.redirect('/admin');
-//             } else {
-//                 res.cookie('errorMessage', 'Senha incorreta');
-//                 return res.redirect('/#register');
-//             }
-//         });
-//     } else {
-//         res.cookie('errorMessage', 'Usuário não encontrado');
-//         return res.redirect('/');
-//     }
-// }
+    try {
+        const [usuario] = await db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
+        try {
+            if (usuario.tipoUsuario == 1) {
+                var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
+            } else {
+                var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
+            }
+
+            if (usuario) {
+                bcrypt.compare(password, usuarioFinal.senha, (err, isMatch) => {
+                    if (isMatch) {
+                        // req.session.usuario = usuario;
+                        return res.redirect('/admin');
+                    } else {
+                        res.cookie('errorMessage', 'Senha incorreta');
+                        return res.redirect('/');
+                    }
+                });
+            }
+        } catch (error) {
+            console.log(error);
+            return res.redirect('/');
+        }
+    } catch (error) {
+        console.log(error);
+        res.cookie('errorMessage', 'Usuário não encontrado');
+        return res.redirect('/');
+    }
+}
 
 module.exports = {
     login
