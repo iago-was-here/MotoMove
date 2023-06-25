@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./routers');
 
 const app = express();
-const port = process.env.PORT;
+const port = 8080;
 
 app.engine('handlebars', exphbs.engine())
   .set('view engine', 'handlebars')
