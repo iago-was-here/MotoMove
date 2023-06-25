@@ -9,6 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
+                <button class="nav-link menu-list" type="button" data-bs-toggle="modal"
+                    data-bs-target="#modalCadastroCorrida">Cadastrar corrida</button>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link menu-list" href="/admin">Voltar</a>
             </li>
         </ul>
@@ -83,4 +87,63 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<!-- Modal para cadastro de corrida -->
+<div class="modal" id="modalCadastroCorrida">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="p-2">
+                    <div class="container form-container">
+                        <div class="form-header">
+                            <h3>Cadastro para Corrida</h3>
+                            <hr>
+                        </div>
+                        <div class="form-body">
+                            <form action="" method="">
+                                <div class="alert alert-success" role="alert">
+                                    Exemplo mensagem de sucesso.
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    Exemplo mensagem de erro.
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CPF - Passageiro" name="cpf" id="cpf"
+                                            required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="CNH - Piloto" name="cnh" id="cnh"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Destino" name="destino"
+                                            id="destino" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="form-control" placeholder="Valor"
+                                            name="valor" id="valor" required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col text-center">
+                                        <button class="btn button" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
 </div>
