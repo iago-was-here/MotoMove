@@ -1,5 +1,7 @@
 const db = require('../../../database/index');
 const bcrypt = require('bcrypt');
+const passageiro = 1;
+const piloto = 2;
 
 const authenticate = (req, res, next) => {
     if (req.session.usuario) {
@@ -15,10 +17,10 @@ const login = async (req, res) => {
     try {
         const [usuario] = await db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
         try {
-            if (usuario.tipoUsuario == 1) {
+            if (usuario.tipoUsuario == passageiro) {
                 var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
             } else {
-                var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
+                var [usuarioFinal] = await db.query('SELECT * FROM piloto WHERE cpf = ?', [usuario.cpf]);
             }
 
             if (usuario) {

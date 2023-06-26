@@ -29,7 +29,6 @@
             </tr>
             <tr>
                 <th> </th>
-                <th>ID</th>
                 <th>CPF Passageiro</th>
                 <th>CNH Piloto</th>
                 <th>Destino</th>
@@ -37,54 +36,15 @@
             </tr>
         </thead>
         <tbody>
+            {{#each races}}
             <tr>
                 <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>1</th>
                 <td>000.000.000.00</td>
                 <td>000000000000</td>
                 <td>Centro</td>
                 <td>R$ 12,50</td>
             </tr>
-            <tr>
-                <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>2</th>
-                <td>111.111.111.11</td>
-                <td>111111111111</td>
-                <td>Shopping</td>
-                <td>R$ 25,60</td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>3</th>
-                <td>222.222.222.22</td>
-                <td>222222222222</td>
-                <td>Instituto Federal</td>
-                <td>R$ 17,00</td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>4</th>
-                <td>333.333.333.33</td>
-                <td>333333333333</td>
-                <td>Centro</td>
-                <td>R$ 11,90</td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>5</th>
-                <td>444.444.444.44</td>
-                <td>444444444444</td>
-                <td>Cinema</td>
-                <td>R$ 9,50</td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <th>6</th>
-                <td>555.555.555.55</td>
-                <td>555555555555</td>
-                <td>Museu</td>
-                <td>R$ 30,40</td>
-            </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>
@@ -113,12 +73,20 @@
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CPF - Passageiro" name="cpf" id="cpf"
-                                            required>
+                                        <select name="cpf" id="cpf" class="form-select">
+                                            <option value="">Escolha um passageiro</option>
+                                            {{!-- {{#each passengers}} --}}
+                                                <option value="{{passengers.cpf}}">{{passengers.nome}}</option>
+                                            {{!-- {{/each}} --}}
+                                        </select>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="CNH - Piloto" name="cnh" id="cnh"
-                                            required>
+                                        <select name="cnh" id="cnh" class="form-select">
+                                            <option value="">Escolha um piloto</option>
+                                            {{#each pilots}}
+                                                <option value="{{cnh}}">{{nome}}</option>
+                                            {{/each}}
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row p-2">
@@ -127,8 +95,8 @@
                                             id="destino" required>
                                     </div>
                                     <div class="col">
-                                        <input type="number" class="form-control" placeholder="Valor"
-                                            name="valor" id="valor" required>
+                                        <input type="number" class="form-control" placeholder="Valor" name="valor"
+                                            id="valor" required>
                                     </div>
                                 </div>
                                 <div class="row p-2">
