@@ -5,7 +5,7 @@ const authenticate = (req, res, next) => {
     if (req.session.usuario) {
         next();
     } else {
-        res.redirect('/login');
+        res.redirect('/');
     }
 };
 
@@ -24,7 +24,7 @@ const login = async (req, res) => {
             if (usuario) {
                 bcrypt.compare(password, usuarioFinal.senha, (err, isMatch) => {
                     if (isMatch) {
-                        // req.session.usuario = usuario;
+                        req.session.usuario = usuario;
                         return res.redirect('/admin');
                     } else {
                         res.cookie('errorMessage', 'Senha incorreta');
@@ -44,5 +44,6 @@ const login = async (req, res) => {
 }
 
 module.exports = {
-    login
+    login,
+    authenticate
 }
