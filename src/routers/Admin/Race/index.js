@@ -9,16 +9,17 @@ race.get('/', async (req, res) => {
   const pilots = await pilotController.getForRaces();
   const passengers = await clientController.getForRaces();
 
-  console.log(races);
-  console.log(pilots);
-  console.log(passengers);
-
   res.render('corridas', {
     title: 'MOTO MOVE | Administrador | Corridas',
     races: races,
     pilots: pilots,
     passengers: passengers
   });
+});
+
+race.post('/cadastrar', async (req, res) => {
+  const data = await raceController.create(req);
+  res.redirect('/corridas');
 });
 
 module.exports = race;

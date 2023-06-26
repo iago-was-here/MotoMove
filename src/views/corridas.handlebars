@@ -29,9 +29,15 @@
             </tr>
             <tr>
                 <th> </th>
+                <th>Passageiro</th>
                 <th>CPF Passageiro</th>
+                <th>Piloto</th>
                 <th>CNH Piloto</th>
+                <th>Origem</th>
                 <th>Destino</th>
+                <th>Inicio</th>
+                <th>Fim</th>
+                <th>Duração</th>
                 <th>Valor</th>
             </tr>
         </thead>
@@ -39,10 +45,16 @@
             {{#each races}}
             <tr>
                 <th scope="row"><ion-icon name="map-outline"></ion-icon></th>
-                <td>000.000.000.00</td>
-                <td>000000000000</td>
-                <td>Centro</td>
-                <td>R$ 12,50</td>
+                <td>{{nome_passageiro}}</td>
+                <td>{{cpf_passageiro}}</td>
+                <td>{{nome_piloto}}</td>
+                <td>{{cnh_piloto}}</td>
+                <td>{{origem}}</td>
+                <td>{{destino}}</td>
+                <td>{{horario_inicio_formatado}}</td>
+                <td>{{horario_final_formatado}}</td>
+                <td>{{duracao}}</td>
+                <td>R${{valor}}</td>
             </tr>
             {{/each}}
         </tbody>
@@ -64,35 +76,49 @@
                             <hr>
                         </div>
                         <div class="form-body">
-                            <form action="" method="">
-                                <div class="alert alert-success" role="alert">
+                            <form action="/corridas/cadastrar" method="POST">
+                                {{!-- <div class="alert alert-success" role="alert">
                                     Exemplo mensagem de sucesso.
                                 </div>
                                 <div class="alert alert-danger" role="alert">
                                     Exemplo mensagem de erro.
-                                </div>
+                                </div> --}}
                                 <div class="row p-2">
                                     <div class="col">
-                                        <select name="cpf" id="cpf" class="form-select">
+                                        <select name="cpf" id="cpf" class="form-select" required>
                                             <option value="">Escolha um passageiro</option>
-                                            {{!-- {{#each passengers}} --}}
-                                                <option value="{{passengers.cpf}}">{{passengers.nome}}</option>
-                                            {{!-- {{/each}} --}}
+                                            {{#each passengers}}
+                                            <option value="{{cpf}}">{{nome}}</option>
+                                            {{/each}}
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select name="cnh" id="cnh" class="form-select">
+                                        <select name="cnh" id="cnh" class="form-select" required>
                                             <option value="">Escolha um piloto</option>
                                             {{#each pilots}}
-                                                <option value="{{cnh}}">{{nome}}</option>
+                                            <option value="{{cnh}}">{{nome}}</option>
                                             {{/each}}
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row p-2">
                                     <div class="col">
+                                        <input type="text" class="form-control" placeholder="Ponto de Partida"
+                                            name="localizacaoPassageiro" id="localizacaoPassageiro" required>
+                                    </div>
+                                    <div class="col">
                                         <input type="text" class="form-control" placeholder="Destino" name="destino"
                                             id="destino" required>
+                                    </div>
+                                </div>
+                                <div class="row p-2">
+                                    <div class="col">
+                                        <input type="datetime-local" class="form-control" name="horarioInicial"
+                                            id="horarioInicial">
+                                    </div>
+                                    <div class="col">
+                                        <input type="datetime-local" class="form-control" name="horarioFinal"
+                                            id="horarioFinal">
                                     </div>
                                     <div class="col">
                                         <input type="number" class="form-control" placeholder="Valor" name="valor"
