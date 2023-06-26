@@ -10,14 +10,13 @@ const getAll = async function () {
     INNER JOIN piloto pt
       ON pt.cpf = u.cpf
   `;
-  const [pilots] = await database.query(query);
+  const pilots = await database.query(query);
   return pilots;
 }
 
 module.exports = {
   getAll,
   create: async (req) => {
-    console.log(req.body);
     const { cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj, senha } = req.body;
     return await database.query('CALL InsertPiloto(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj, senha]);
   },

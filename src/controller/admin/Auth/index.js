@@ -12,19 +12,20 @@ const authenticate = (req, res, next) => {
 };
 
 const login = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, senha } = req.body;
 
     try {
         const [usuario] = await db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
         try {
             if (usuario.tipoUsuario == passageiro) {
                 var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
-            } else {
+            }
+            if (usuario.tipoUsuario == piloto) {
                 var [usuarioFinal] = await db.query('SELECT * FROM piloto WHERE cpf = ?', [usuario.cpf]);
             }
 
             if (usuario) {
-                bcrypt.compare(password, usuarioFinal.senha, (err, isMatch) => {
+                bcrypt.compare(senha, usuarioFinal.senha, (err, isMatch) => {
                     if (isMatch) {
                         req.session.usuario = usuario;
                         return res.redirect('/admin');
@@ -40,7 +41,6 @@ const login = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.cookie('errorMessage', 'Usuário não encontrado');
         return res.redirect('/');
     }
 }

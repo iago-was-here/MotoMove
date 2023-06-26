@@ -11,7 +11,7 @@ const getAll = async function () {
       INNER JOIN passageiro pa
         ON pa.cpf = u.cpf
     `;
-  const [clients] = await database.query(query);
+  const clients = await database.query(query);
   return clients;
 }
 
