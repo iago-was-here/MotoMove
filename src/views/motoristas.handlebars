@@ -30,46 +30,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
-                <td>Iago</td>
-                <td>iago@email.com</td>
-                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
-                        class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Excluir</a></td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
-                <td>Filipe</td>
-                <td>filipe@email.com</td>
-                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
-                        class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Excluir</a></td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
-                <td>Caroline</td>
-                <td>caroline@email.com</td>
-                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
-                        class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Excluir</a></td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
-                <td>Luan</td>
-                <td>luan@email.com</td>
-                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
-                        class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Excluir</a></td>
-            </tr>
-            <tr>
-                <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
-                <td>Caio</td>
-                <td>caio@email.com</td>
-                <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
-                        class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Excluir</a></td>
-            </tr>
+            {{#each data}}
+                <tr>
+                    <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
+                    <td>{{nome}}</td>
+                    <td>{{email}}</td>
+                    <td><a href="" data-bs-toggle="modal" data-bs-target="#modalEdicaoMotorista"
+                            class="btn btn-primary">Editar</a></td>
+                    <td><a href="motoristas/excluir/{{cpf}}" class="btn btn-danger">Excluir</a></td>
+                </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>

@@ -13,8 +13,7 @@ async function getConnection() {
 async function query(sql = '', values = []) {
   const connection = await this.getConnection();
   try {
-    const [rows, fields] = await connection.execute(sql, values);
-
+    const [rows] = await connection.execute(sql, values);
     return rows;
   } catch (error) {
     return { error: true, message: error };

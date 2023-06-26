@@ -1,7 +1,7 @@
 const db = require('../../../database/index');
 
 const getAll = async function () {
-    var query = `
+  var query = `
         SELECT 
             passageiro.*,
             piloto.*,
@@ -35,10 +35,10 @@ const getAll = async function () {
         INNER JOIN localizacao lo
 		    ON lo.id = co.ID_Localizacao
     `;
-    const [races] = await db.query(query);
-    return races;
-}
+  const [races] = await db.query(query);
+  return races;
+};
 
 module.exports = {
-    getAll
-}
+  getAll
+};

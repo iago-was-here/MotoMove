@@ -5,7 +5,7 @@ const session = require('express-session');
 const routes = require('./routers');
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.engine('handlebars', exphbs.engine())
   .set('view engine', 'handlebars')
