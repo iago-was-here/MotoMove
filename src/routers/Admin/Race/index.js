@@ -18,7 +18,7 @@ race.get('/', async (req, res) => {
 });
 
 race.post('/cadastrar', async (req, res) => {
-  const data = await raceController.create(req);
+  await raceController.create(req);
   res.redirect('/corridas');
 });
 

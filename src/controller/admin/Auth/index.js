@@ -11,38 +11,38 @@ const authenticate = (req, res, next) => {
 };
 
 const login = async (req, res) => {
-    const { email, senha } = req.body;
+  const { email, senha } = req.body;
 
+  try {
+    const [usuario] = await db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
     try {
-        const [usuario] = await db.query('SELECT * FROM usuario WHERE Email = ?', [email]);
-        try {
-            if (usuario.tipoUsuario == passageiro) {
-                var [usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
-            }
-            if (usuario.tipoUsuario == piloto) {
-                var [usuarioFinal] = await db.query('SELECT * FROM piloto WHERE cpf = ?', [usuario.cpf]);
-            }
+      if (usuario.tipoUsuario == passageiro) {
+        const usuarioFinal] = await db.query('SELECT * FROM passageiro WHERE cpf = ?', [usuario.cpf]);
+      }
+      if (usuario.tipoUsuario == piloto) {
+        const [usuarioFinal] = await db.query('SELECT * FROM piloto WHERE cpf = ?', [usuario.cpf]);
+      }
 
-            if (usuario) {
-                bcrypt.compare(senha, usuarioFinal.senha, (err, isMatch) => {
-                    if (isMatch) {
-                        req.session.usuario = usuario;
-                        return res.redirect('/admin');
-                    } else {
-                        res.cookie('errorMessage', 'Senha incorreta');
-                        return res.redirect('/');
-                    }
-                });
-            }
-        } catch (error) {
-            console.log(error);
+      if (usuario) {
+        bcrypt.compare(senha, usuarioFinal.senha, (err, isMatch) => {
+          if (isMatch) {
+            req.session.usuario = usuario;
+            return res.redirect('/admin');
+          } else {
+            res.cookie('errorMessage', 'Senha incorreta');
             return res.redirect('/');
-        }
+          }
+        });
+      }
     } catch (error) {
-        console.log(error);
-        return res.redirect('/');
+      console.log(error);
+      return res.redirect('/');
     }
-}
+  } catch (error) {
+    console.log(error);
+    return res.redirect('/');
+  }
+};
 
 module.exports = {
   login,
