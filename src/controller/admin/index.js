@@ -1,10 +1,11 @@
 const client = require('./client');
 const pilot = require('./pilot');
-// const race = require('./race');
-// const auth = require('./Auth');
+const race = require('./race');
+const auth = require('./Auth');
 
 module.exports = {
   client,
-  pilot
-  // race
+  pilot,
+  race,
+  auth
 };
