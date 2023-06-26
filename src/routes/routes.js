@@ -38,12 +38,26 @@ routes.get('/clientes', function(req, res) {
   res.render('clientes', dadosTemplate);
 });
 
+routes.get('/cliente', function(req, res) {
+  const dadosTemplate = {
+    title: 'MOTO MOVE | Administrador | Editar | Cliente'
+  };
+  res.render('editar-cliente', dadosTemplate);
+});
+
 // Motorista
 routes.get('/motoristas', function(req, res) {
   const dadosTemplate = {
     title: 'MOTO MOVE | Administrador | Motoristas'
   };
   res.render('motoristas', dadosTemplate);
+});
+
+routes.get('/motorista', function(req, res) {
+  const dadosTemplate = {
+    title: 'MOTO MOVE | Administrador | Editar | Motorista'
+  };
+  res.render('editar-motorista', dadosTemplate);
 });
 
 // Corrida
