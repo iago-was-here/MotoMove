@@ -19,8 +19,7 @@ module.exports = {
     return await database.query('CALL DeletePassageiro(?)', [req.params.cpf]);
   },
   update: async (req) => {
-    const { cpf } = req.params;
-    const { nome, telefone, email, dataNascimento, senha } = req.body;
+    const { cpf, nome, telefone, email, dataNascimento, senha } = req.body;
     return await database.query('UPDATE passageiro JOIN usuario ON passageiro.cpf = usuario.cpf SET usuario.nome = ?, usuario.email = ?, usuario.telefone = ?, usuario.dataNascimento = ?, passageiro.senha = ? WHERE passageiro.cpf = ?;', [nome, email, telefone, dataNascimento, await bcrypt.hash(senha, 10), cpf]);
   },
 };

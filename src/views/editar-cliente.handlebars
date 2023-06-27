@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top start-menu">
     <a class="navbar-brand" href="/inicio">
-        <img src="public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
+        <img src="../../public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
             <hr>
         </div>
         <div class="form-body">
-            <form action="" method="">
+            <form action="/clientes/editar" method="post">
                 <div class="alert alert-success" role="alert">
                     Exemplo mensagem de sucesso.
                 </div>
@@ -32,28 +32,27 @@
                 </div>
                 <div class="row p-2">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome" required>
+                        <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome" value="{{data.nome}}" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf" required>
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Telefone" name="telefone" id="telefone"
-                            required>
-                    </div>
-                    <div class="col">
-                        <input type="date" class="form-control" placeholder="Data de nascimento" name="dataNascimento"
-                            id="dataNascimento" required>
+                        <input type="date" class="form-control" placeholder="Data de nascimento" name="dataNascimento" id="dataNascimento" value="{{data.dataNascimento}}" required>
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" required>
+                        <input type="text" class="form-control" placeholder="Telefone" name="telefone" id="telefone" value="{{data.telefone}}" required>
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Senha" name="senha" id="senha" required>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{data.email}}" required>
+                    </div>
+                    
+                    <div class="col">
+                        <input type="hidden" class="form-control" placeholder="CPF" name="cpf" id="cpf" value="{{data.cpf}}" required>
                     </div>
                 </div>
                 <div class="row p-2">

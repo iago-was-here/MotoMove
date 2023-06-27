@@ -1,6 +1,7 @@
 const express = require('express');
 const pilot = express.Router();
 const { admin } = require('../../../controller');
+const client = require('../Client');
 
 pilot.get('/', async (req, res) => {
   res.render('motoristas', {
@@ -10,9 +11,18 @@ pilot.get('/', async (req, res) => {
 });
 
 pilot.get('/editar/:cpf', async (req, res) => {
-  console.log(await admin.pilot.getByCpf(req));
-  res.redirect('/motoristas');
+  let data = await admin.client.getByCpf(req);
+  data[0].dataNascimento = JSON.stringify(data[0].dataNascimento).split("T")[0].replace('"','');
+  res.redirect('/motoristas', {
+    title: 'MOTO MOVE | Administrador | Motoristas',
+    data: data[0]
+  });
 });
+
+pilot.post('/editar', async(req, res) =>{
+  await admin.pilot.update(req);
+  res.redirect("/motoristas")
+})
 
 pilot.get('/excluir/:cpf', async (req, res) => {
   await admin.pilot.delete(req);
