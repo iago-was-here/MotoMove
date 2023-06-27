@@ -5,6 +5,15 @@ const pilot = require('./pilot');
 const race = require('./race');
 const auth = require('./auth');
 
+admin.use('/auth', auth);
+
+admin.use('*', (req, res, next) => {
+  if (!req.session.usuario) {
+    res.redirect('/');
+  }
+  next();
+});
+
 admin.get('/admin', (req, res) => {
   res.render('dashboard-admin', {
     title: 'MOTO MOVE | Administrador'
@@ -14,6 +23,5 @@ admin.get('/admin', (req, res) => {
 admin.use('/clientes', client);
 admin.use('/motoristas', pilot);
 admin.use('/corridas', race);
-admin.use('/auth', auth);
 
 module.exports = admin;

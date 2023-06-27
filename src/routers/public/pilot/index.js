@@ -4,7 +4,7 @@ const { admin } = require('../../../controller');
 
 pilot.post('/motorista', async (req, res) => {
   await admin.pilot.create(req);
-  res.redirect('../admin');
+  res.redirect('/motoristas');
 });
 
 module.exports = pilot;

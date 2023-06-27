@@ -8,7 +8,7 @@ auth.post('/login', async (req, res) => {
 
 auth.get('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/admin');
+    res.redirect('/');
   });
 });
 

@@ -4,7 +4,7 @@ const { admin } = require('../../../controller');
 
 client.post('/cliente', async (req, res) => {
   await admin.client.create(req);
-  res.redirect('../admin');
+  res.redirect('/clientes');
 });
 
 module.exports = client;

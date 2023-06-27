@@ -13,7 +13,7 @@ module.exports = {
   },
   create: async (req) => {
     const { cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj, senha } = req.body;
-    return await database.query('CALL InsertPiloto(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj, await bcrypt.hash(senha, 10)]);
+    return await database.query('CALL InsertPiloto(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj ? cnpj : null, await bcrypt.hash(senha, 10)]);
   },
   delete: async (req) => {
     return await database.query('CALL DeletePiloto(?)', [req.params.cpf]);
