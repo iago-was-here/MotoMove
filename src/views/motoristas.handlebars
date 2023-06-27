@@ -35,7 +35,7 @@
                     <th scope="row"><ion-icon name="bicycle-outline"></ion-icon></th>
                     <td>{{nome}}</td>
                     <td>{{email}}</td>
-                    <td><a href="motorista/editar/{{cpf}}" class="btn btn-primary">Editar</a></td>
+                    <td><a href="motoristas/editar/{{cpf}}" class="btn btn-primary">Editar</a></td>
                     <td><a href="motoristas/excluir/{{cpf}}" class="btn btn-danger">Excluir</a></td>
                 </tr>
             {{/each}}
@@ -59,12 +59,12 @@
                         </div>
                         <div class="form-body">
                             <form action="/cadastrar/motorista" method="POST">
-                                <div class="alert alert-success" role="alert">
+                                {{!-- <div class="alert alert-success" role="alert">
                                     Exemplo mensagem de sucesso.
                                 </div>
                                 <div class="alert alert-danger" role="alert">
                                     Exemplo mensagem de erro.
-                                </div>
+                                </div> --}}
                                 <div class="row p-2">
                                     <div class="col">
                                         <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome"

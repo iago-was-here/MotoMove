@@ -1,7 +1,6 @@
 const express = require('express');
 const auth = express.Router();
 const { admin } = require('../../../controller');
-// const authenticate = admin.auth.authenticate;
 
 auth.post('/login', async (req, res) => {
   admin.auth.login(req, res);

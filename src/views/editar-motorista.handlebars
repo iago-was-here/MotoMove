@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top start-menu">
     <a class="navbar-brand" href="/inicio">
-        <img src="public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
+        <img src="../../public/img/logo-removebg-preview.png" alt="Logo Moto Move" height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,18 +24,18 @@
         </div>
         <div class="form-body">
            <form action="/cadastrar/motorista" method="POST">
-                <div class="alert alert-success" role="alert">
+                {{!-- <div class="alert alert-success" role="alert">
                     Exemplo mensagem de sucesso.
                 </div>
                 <div class="alert alert-danger" role="alert">
                     Exemplo mensagem de erro.
-                </div>
+                </div> --}}
                 <div class="row p-2">
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome" value="{{data.nome}}" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="CPF" name="cpf" id="cpf" value="{{data.cpf}}" required>
+                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" id="cnpj" value="{{data.cnpjEmpresa}}" required>
                     </div>
                 </div>
                 <div class="row p-2">
@@ -69,7 +69,7 @@
                             name="dadosBancarios" id="dadosBancarios" value="{{data.dadosBancarios}}" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" id="cnpj" value="{{data.cnpj}}" required>
+                        <input type="hidden" class="form-control" placeholder="CPF" name="cpf" id="cpf" value="{{data.cpf}}" required>
                     </div>
                 </div>
                 <div class="row p-2">

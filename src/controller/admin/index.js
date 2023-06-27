@@ -6,6 +6,6 @@ const auth = require('./Auth');
 module.exports = {
   client,
   pilot,
-  race,
-  auth
+  auth,
+  race
 };

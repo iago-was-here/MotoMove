@@ -9,7 +9,7 @@ module.exports = {
     return await database.query('SELECT usuario.* FROM usuario INNER JOIN piloto WHERE usuario.cpf = piloto.cpf');
   },
   getByCpf: async (req) => {
-    return await database.query('SELECT usuario.* FROM usuario WHERE cpf = ?', [req.params.cpf]);
+    return await database.query('SELECT usuario.*, piloto.cnh, piloto.dadosBancarios, piloto.documentoVeiculo, piloto.cnpjEmpresa FROM usuario INNER JOIN piloto ON usuario.cpf = piloto.cpf WHERE piloto.cpf = ?', [req.params.cpf]);
   },
   create: async (req) => {
     const { cpf, nome, telefone, email, dataNascimento, cnh, dadosBancarios, documentoVeiculo, cnpj, senha } = req.body;
